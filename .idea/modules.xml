@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/rbac/rbac.iml" filepath="$PROJECT_DIR$/rbac/rbac.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro01/shiro01.iml" filepath="$PROJECT_DIR$/shiro01/shiro01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro02/shiro02.iml" filepath="$PROJECT_DIR$/shiro02/shiro02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro03/shiro03.iml" filepath="$PROJECT_DIR$/shiro03/shiro03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring02/spring02.iml" filepath="$PROJECT_DIR$/spring02/spring02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring03/spring03.iml" filepath="$PROJECT_DIR$/spring03/spring03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_Flower2/spring_Flower2.iml" filepath="$PROJECT_DIR$/spring_Flower2/spring_Flower2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_account/spring_account.iml" filepath="$PROJECT_DIR$/spring_account/spring_account.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring_mybatisLogin/spring_mybatisLogin.iml" filepath="$PROJECT_DIR$/spring_mybatisLogin/spring_mybatisLogin.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc01/springmvc01.iml" filepath="$PROJECT_DIR$/springmvc01/springmvc01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc02/springmvc02.iml" filepath="$PROJECT_DIR$/springmvc02/springmvc02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/springmvc03/springmvc03.iml" filepath="$PROJECT_DIR$/springmvc03/springmvc03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-email/ssm-email.iml" filepath="$PROJECT_DIR$/ssm-email/ssm-email.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-shiro/ssm-shiro.iml" filepath="$PROJECT_DIR$/ssm-shiro/ssm-shiro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-shiro-login/ssm-shiro-login.iml" filepath="$PROJECT_DIR$/ssm-shiro-login/ssm-shiro-login.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm-shiro02/ssm-shiro02.iml" filepath="$PROJECT_DIR$/ssm-shiro02/ssm-shiro02.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ssm_login/ssm_login.iml" filepath="$PROJECT_DIR$/ssm_login/ssm_login.iml" />
+    </modules>
+  </component>
+</project>

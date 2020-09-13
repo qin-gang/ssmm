@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="aopalliance-login">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/spring_mybatisLogin/web/WEB-INF/lib/aopalliance.jar!/" />
+      <root url="jar://$PROJECT_DIR$/spring_mybatisLogin/web/WEB-INF/lib/aspectjweaver.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

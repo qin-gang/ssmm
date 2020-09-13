@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+                          http://www.springframework.org/schema/aop/spring-aop.xsd
+                          http://www.springframework.org/schema/context 
+                          http://www.springframework.org/schema/aop/spring-context.xsd  
+                          http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="us" class="com.nuc.edu.pojo.User"></bean>
+
+    <!--创建前置通知对象-->
+    <bean id="befor" class="com.nuc.edu.advice.BeforeAdvice"></bean>
+
+    <!--配置后置通知对象-->
+    <bean id="after" class="com.nuc.edu.advice.AfterAdvice"></bean>
+
+    <!--配置环绕通知-->
+    <bean id="run" class="com.nuc.edu.advice.RunAdvice"></bean>
+
+    <!--配置异常通知-->
+    <bean id="thr" class="com.nuc.edu.advice.ThrAdvice"></bean>
+
+    <!--织入成一个切面-->
+    <aop:config>
+        <!--配置切点  含义  User类中的b方法  -->
+        <aop:pointcut id="pt1" expression="execution(* com.nuc.edu.pojo.User.b(..) )"/>
+
+        <!--配置切点  含义  User类中的所有方法  -->
+        <aop:pointcut id="pt2" expression="execution(* com.nuc.edu.pojo.User.*(..) )"/>
+
+        <!--配置切点  含义 pojo包下所有类的所有方法  -->
+        <aop:pointcut id="pt3" expression="execution(* com.nuc.edu.pojo.*.*(..) )"/>
+
+        <aop:advisor advice-ref="befor" pointcut-ref="pt1"></aop:advisor>
+        <aop:advisor advice-ref="after" pointcut-ref="pt1"></aop:advisor>
+        <aop:advisor advice-ref="run" pointcut-ref="pt1"></aop:advisor>
+        <aop:advisor advice-ref="thr" pointcut-ref="pt1"></aop:advisor>
+    </aop:config>
+
+</beans>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.nuc.edu.mapper.AdminMapper">
+
+    <select id="selectOne" resultType="admin">
+      SELECT   *  from  admin  where  username =#{uname}  and  password =#{pwd}
+    </select>
+
+<!--    <resultMap id="adminMapper" type="admin">-->
+<!--        <id property="username" column="uname"></id>-->
+<!--        <result property="password" column="pwd"></result>-->
+<!--        <result property="salt" column="salt"></result>-->
+<!--    </resultMap>-->
+
+    <select id="selectPwd" resultType="admin">
+        select * from admin where uname=#{uname}
+    </select>
+
+</mapper>

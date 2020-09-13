@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--A、有参构造方式进行注入-->
+    <bean id="cla" class="com.nuc.edu.spring4.Clazz">
+        <constructor-arg name="cname" value="java1班"></constructor-arg>
+        <constructor-arg name="clazzno" value="507"></constructor-arg>
+    </bean>
+    <!--
+    <bean id="stu" class="com.nuc.edu.spring4.Student">
+        <constructor-arg name="name" value="qg1"></constructor-arg>
+        <constructor-arg name="age" value="18"></constructor-arg>
+        <constructor-arg name="sex" value="男"></constructor-arg>
+        <constructor-arg name="clazz" ref="cla"></constructor-arg>
+    </bean>-->
+
+    <!--B、使用set方法进行DI注入-->
+    <!--
+         name:对象的属性名
+    -->
+    <!--<bean id="stu" class="com.nuc.edu.spring4.Student">
+        <property name="name" value="qg2"></property>
+        <property name="age" value="18"></property>
+        <property name="sex" value="男"></property>
+        <property name="clazz" ref="cla"></property>
+    </bean>-->
+
+    <!--C、DI中的自动注入-->
+    <!--
+          底层走的是set方法：
+          byName:这个时候会在当前的xml中寻找【bean的ID名称】和需要注入的【属性名】一致，进行匹配
+          byName:这个时候会在当前的xml中寻找【bean标签的类型】和需要注入的【属性的类型】一致，进行匹配
+
+          底层走的是构造器
+          constructor:这个时候首先会根据名称【有参构造器的形参名】进行查找，如果名称没有一致，会安类型【有参构造器类型】进行匹配
+            需要注意：需要在实体类中提供专门为对象注入的有参构造器，单为对象的构造器不管下面有没有普通类型
+    -->
+    <!--<bean id="stu" class="com.nuc.edu.spring4.Student" autowire="byName">
+        <property name="name" value="hh"></property>
+    </bean>-->
+
+   <!-- <bean id="stu" class="com.nuc.edu.spring4.Student" autowire="byType">
+        <property name="name" value="lp"></property>
+    </bean>-->
+
+    <!--<bean id="stu" class="com.nuc.edu.spring4.Student" autowire="constructor">
+        <property name="name" value="lp2"></property>
+    </bean>-->
+
+    <!--特殊类型的值注入-->
+    <bean id="us" class="com.nuc.edu.spring4.User">
+       <property name="arr">
+           <array>
+               <value>A</value>
+               <value>B</value>
+               <value>C</value>
+           </array>
+       </property>
+
+        <property name="li">
+            <list>
+                <value>C</value>
+                <value>D</value>
+            </list>
+        </property>
+
+        <property name="se">
+            <set>
+                <value>F</value>
+                <value>F</value>
+                <value>E</value>
+            </set>
+        </property>
+
+        <property name="map">
+            <map>
+                <entry>
+                    <key><value>qg</value></key>
+                    <value>666</value>
+                </entry>
+                <entry>
+                    <key><value>lp</value></key>
+                    <value>888</value>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

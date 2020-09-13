@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="shiro-ssm">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/slf4j-log4j12-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/shiro-web-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/shiro-spring-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/shiro-core-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/shiro-all-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/junit-4.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/commons-collections-3.2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro-login/web/WEB-INF/lib/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

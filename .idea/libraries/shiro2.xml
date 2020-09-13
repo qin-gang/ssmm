@@ -1,0 +1,20 @@
+<component name="libraryTable">
+  <library name="shiro2">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/com.springsource.com.mchange.v2.c3p0-0.9.1.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/commons-beanutils-1.9.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/commons-logging-1.1.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/junit-4.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/log4j-1.2.17.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/mysql-connector-java-5.1.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/shiro-all-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/shiro-core-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/shiro-spring-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/shiro-web-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/slf4j-api-1.7.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/shiro02/lib/slf4j-log4j12-1.7.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

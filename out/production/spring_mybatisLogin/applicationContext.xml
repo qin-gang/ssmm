@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--读取属性文件-->
+   <context:property-placeholder location="classpath:db.properties"></context:property-placeholder>
+
+   <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+       <property name="driverClassName" value="${driver1}"></property>
+       <property name="url" value="${url1}"></property>
+       <property name="username" value="root"></property>
+       <property name="password" value="root"></property>
+   </bean>
+
+    <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="ds"></property>
+        <property name="typeAliasesPackage" value="com.nuc.edu.pojo"></property>
+    </bean>
+
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="factory"></property>
+        <property name="basePackage" value="com.nuc.edu.mapper"></property>
+    </bean>
+
+    <bean id="admins" class="com.nuc.edu.service.imp.LoginServiceImpl">
+        <property name="loginMapper" ref="loginMapper"></property>
+    </bean>
+
+    <!--织入成一个切面-->
+    <bean id="after" class="com.nuc.edu.advice.AfterAdvice"></bean>
+
+    <aop:config>
+        <aop:pointcut id="pt" expression="execution(* com.nuc.edu.service.imp.LoginServiceImpl.findAdmin(..))"/>
+        <aop:advisor advice-ref="after" pointcut-ref="pt"></aop:advisor>
+    </aop:config>
+
+    <!--aop底层默认走JDK代理   设置了这个走CGLIB代理-->
+    <!--<aop:aspectj-autoproxy proxy-target-class="true"></aop:aspectj-autoproxy>-->
+
+    <!--配置声明式事务-->
+    <!--声明事务对象-->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="ds"></property>
+    </bean>
+
+    <tx:advice id="ad" transaction-manager="transactionManager">
+        <tx:attributes>
+            <tx:method name="findAdmin" />
+        </tx:attributes>
+    </tx:advice>
+
+
+    <!--通过配置切面的方式增加通知-->
+    <aop:config>
+        <aop:pointcut id="pt" expression="execution(* com.nuc.edu.service.imp.LoginServiceImpl.*(..))"/>
+        <aop:advisor advice-ref="ad" pointcut-ref="pt"></aop:advisor>
+    </aop:config>
+
+    <!--AspectJ注解扫描-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+
+    <!--扫描普通注入对象包-->
+    <context:component-scan base-package="com.nuc.edu.advice"></context:component-scan>
+
+
+</beans>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--【1】连接数据库获得数据源-->
+    <bean id="ds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/mybatis"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="root"></property>
+    </bean>
+
+    <!--获得sqlSession工厂对象-->
+    <bean id="factory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="ds"></property>
+        <property name="typeAliasesPackage" value="com.nuc.edu.pojo"></property>
+    </bean>
+
+    <!--[3]扫描文件-->
+    <bean id="mapper" class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactory" ref="factory"></property>
+        <property name="basePackage" value="com.nuc.edu.mapper"></property>
+    </bean>
+
+    <!--给adminMapper赋值-->
+    <bean id="admins" class="com.nuc.edu.service.Impl.AdminServiceImpl">
+        <property name="adminMapper" ref="adminMapper"></property>
+    </bean>
+</beans>

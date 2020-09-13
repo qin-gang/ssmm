@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="ssm-shiro-shirojar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/ssm-shiro/web/WEB-INF/lib/shiro-core-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro/web/WEB-INF/lib/shiro-spring-1.3.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/ssm-shiro/web/WEB-INF/lib/shiro-web-1.3.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

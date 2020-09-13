@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+                          http://www.springframework.org/schema/aop/spring-aop.xsd
+                          http://www.springframework.org/schema/context
+                          http://www.springframework.org/schema/aop/spring-context.xsd
+                          http://www.springframework.org/schema/beans
+                          http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+      <bean id="us" class="com.nuc.edu.pojo.User"></bean>
+
+      <!--配置通知类的对象-->
+      <bean id="aps" class="com.nuc.edu.advice.AspectJAdvice"></bean>
+
+      <aop:config>
+          <aop:aspect ref="aps">
+              <aop:pointcut id="pt" expression="execution(* com.nuc.edu.pojo.User.a(..))"/>
+              <!--给切点增加通知-->
+              <aop:before method="beforeAd" pointcut-ref="pt"></aop:before>
+
+              <!--无论切点中的方法是否有异常，这个后置通知都会执行-->
+              <!--<aop:after method="afterAd" pointcut-ref="pt"></aop:after>-->
+
+              <!--当切点中的方法没有异常时才会执行这个方法-->
+              <!--<aop:after-returning method="afterAd" pointcut-ref="pt"></aop:after-returning>-->
+
+              <aop:around method="roundAd" pointcut-ref="pt"></aop:around>
+
+              <aop:after-throwing method="thrAd" pointcut-ref="pt"></aop:after-throwing>
+
+          </aop:aspect>
+      </aop:config>
+</beans>
