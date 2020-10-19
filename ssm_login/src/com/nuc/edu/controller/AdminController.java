@@ -3,15 +3,18 @@ package com.nuc.edu.controller;
 import com.nuc.edu.pojo.Admin;
 import com.nuc.edu.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.context.support.WebApplicationContextUtils;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Map;
 
 @Controller
 public class AdminController {
-    @Autowired
+    @Autowired(required = true)
     AdminService adminService;
     @RequestMapping("login.do")
     public String adminLogin(String uname, String pwd, HttpServletRequest req, Map<String,String> map){
